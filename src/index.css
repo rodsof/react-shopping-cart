@@ -195,3 +195,29 @@ input {
   padding: 1rem;
   border: .1rem #e986cb solid;
 }
+
+/* Product details */
+.product-details {
+  display: flex; /* para que todo este siguiente a lo anterior (next to each other)*/
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-height: 96vh;
+}
+
+.product-details img {
+  max-height: 100vh;
+  max-width: 46rem;
+  margin: 0 auto;
+}
+
+.product-details-description {
+  flex: 1 1;
+  margin: 1rem;
+}
+
+.close-modal {
+  position: absolute;
+  right: 1rem;
+  top: 2.5rem;
+  z-index: 1000;
+}
