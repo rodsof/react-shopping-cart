@@ -1,9 +1,21 @@
-const { FETCH_PRODUCTS } = require("../types");
+const { FETCH_PRODUCTS, FILTER_PRODUCTS_BY_SIZE, ORDER_PRODUCTS_BY_PRICE } = require("../types");
 
 export const productsReducer = (state = {}, action) => {
     switch(action.type){
+        case FILTER_PRODUCTS_BY_SIZE:
+            return {
+                ...state, // return the current state but if a change something in state, we return the new one
+                filteredItems: action.payload.items,
+                size: action.payload.size
+            };
+        case ORDER_PRODUCTS_BY_PRICE:
+            return {
+                ...state,
+                sort: action.payload.sort, 
+                filteredItems: action.payload.items
+            }
         case FETCH_PRODUCTS:
-            return { items: action.payload };
+            return { items: action.payload, filteredItems: action.payload };
         default: 
             return state;
     }
