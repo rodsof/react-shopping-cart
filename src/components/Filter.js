@@ -47,7 +47,7 @@ class Filter extends Component {
 }
 
 export default connect(
-  ((state) => ({
+  (state) => ({
     size: state.products.size,
     sort: state.products.sort,
     products: state.products.items,
@@ -56,5 +56,5 @@ export default connect(
   {
     filterProducts,
     sortProducts,
-  })(Filter)
-);
+  }
+)(Filter);
